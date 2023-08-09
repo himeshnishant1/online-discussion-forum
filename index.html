@@ -1,0 +1,1614 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>Forum</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!--<link href="https://netdna.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet">-->
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet" />
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js"></script>
+
+    <link rel="stylesheet" href="./assets/css/style.css" />
+    <link rel="stylesheet" href="./assets/css/responsive.css" />
+
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet">
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/2.9.2/umd/popper.min.js"></script>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/1.1.3/sweetalert.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Caveat&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=BhuTuka+Expanded+One&family=Caveat&family=Delius+Swash+Caps&family=Give+You+Glory&family=Love+Ya+Like+A+Sister&display=swap" rel="stylesheet">
+
+
+
+
+    <style>
+        .input-group {
+            justify-content: right;
+            padding: 0 14px;
+        }
+
+        .navbar .max-width {
+            width: 100%;
+        }
+
+        .fb {
+            text-decoration: none;
+            color: black;
+        }
+
+        fb:hover {
+            text-decoration: none;
+            color: black;
+        }
+    </style>
+</head>
+
+
+<body>
+    <!--Navbar start-->
+    <nav class="navbar">
+        <div class="max-width">
+            <div class="logo">
+                <a href="#"><img src="./assets/img/logo.png" class="logo1" /></a>
+            </div>
+            <ul class="menu">
+                <li><a href="#home" class="menu-btn">Home</a></li>
+                <li class="user-profile"><a href="#" class="menu-btn">Profile</a></li>
+                <li class="login-btn">
+                    <a href="" class="menu-btn" data-bs-toggle="modal" data-bs-target="#exampleModal">Login</a>
+                </li>
+                <li class="user-btn">
+                    <a class="menu-btn">Logout</a>
+                </li>
+                <li>
+                    <!--Search bar start-->
+                    <div class="input-group">
+                        <div id="search-autocomplete" class="form-outline">
+                            <input type="search" id="form1" class="form-control search-bar" autocomplete="on" />
+                        </div>
+                        <button type="button" class="btn btn-primary">
+                            <i class="fa fa-search"></i>
+                        </button>
+                    </div>
+                    <!--search bar end-->
+                </li>
+            </ul>
+
+            <div class="menu-btn">
+                <i class="fa fa-bars"></i>
+            </div>
+        </div>
+    </nav>
+
+    <!--modal 1 start-->
+    <div class="modal fade login-window-popup" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title font" id="exampleModalLabel">Login Form</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <form class="login-form">
+                        <div class="text-center">
+                            <i class="fa fa-user fa-5x"></i>
+                        </div>
+
+                        <label style="color: green; text-align: center;width: 100%;" class="login-message"></label>
+                        <div class="mb-3 mt-4">
+                            <label for="exampleInputEmail1" class="form-label">Email address</label>
+                            <input type="email" class="form-control login-email" id="exampleInputEmail1" aria-describedby="emailHelp">
+                        </div>
+                        <div class="mb-3">
+                            <label for="exampleInputPassword1" class="form-label">Password</label>
+                            <input type="password" class="form-control login-pass" id="exampleInputPassword1">
+                        </div>
+                        <button class="btn btn-warning mt-3 login-submit">LOGIN</button>
+                        <p class="signin-text">Not a member? <a href="#" data-bs-toggle="modal" data-bs-target="#signup">Signup now</a></p>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--modal 1 end-->
+    <!--modal 2 start-->
+    <div class="modal fade" id="signup" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title font" id="exampleModalLabel">Signup Form</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <div style="width: 100%;"><label style="color: red; text-align: center;width: 100%;" for="display" class="display-message"></label></div>
+                    <form class="form-horizontal signup-form">
+                        <!--  <iframe name="my_iframe"></iframe>-->
+                        <fieldset>
+                            <!-- Sign Up Form -->
+                            <!-- Text input-->
+                            <div class="text-center">
+                                <i class="fa fa-file-text fa-user fa-5x"></i>
+                            </div>
+                            <div class="group">
+                                <input required class="input" name="firstname" type="text">
+                                <span class="highlight"></span><span class="bar"></span>
+                                <label class="label" for="date">First Name</label>
+                            </div>
+
+                            <!-- Text input-->
+                            <div class="group">
+                                <input required class="input" name="lastname" type="text"><span class="highlight"></span><span class="bar"></span>
+                                <label class="label" for="date">Last Name</label>
+                            </div>
+
+                            <!-- Password input-->
+                            <div class="group">
+                                <input required class="input" name="email" type="text"><span class="highlight"></span><span class="bar"></span>
+                                <label class="label" for="date">Email</label>
+                            </div>
+
+                            <!-- Text input-->
+                            <div class="group">
+                                <input required class="input" name="password" type="password"><span class="highlight"></span><span class="bar"></span>
+                                <label class="label" for="date">Password</label>
+                            </div>
+                            <em>1-8 Characters</em>
+
+                            <div class="group2">
+                                <input required class="input" name="country" type="text"><span class="highlight"></span><span class="bar"></span>
+                                <label class="label" for="date">Country</label>
+                            </div>
+
+
+
+                            <!-- Button -->
+                            <div class="control-group">
+                              <!--  <label class="control-label" for="confirmsignup"></label>-->
+                                <div class="controls">
+                                    <input type="submit" value="Sign Up" class="btn btn-warning btn-block">
+                                </div>
+                            </div>
+                        </fieldset>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--modal 2 end-->
+
+
+    <div class="container mt-5">
+
+        <div class="row">
+            <!--First card start-->
+            <div class="col-md-6">
+                <div class="card mb-3 mt-5 card1" style="max-width: 540px;">
+                    <img src="./assets/img/forum-icon.png" class="img-fluid rounded-start forum-img" alt="...">
+                    <div class="row g-0 bg-card1">
+                        <div class="col-md-8 card1-button">
+                            <div class="card-body card1-title">
+                                <!--<span class="text-slider-items">
+                                  Rupesh kamble
+                                </span>
+                                <strong class="text-slider"></strong>-->
+                                <h1 class="card-title title">Welcome to Our forum</h1>
+                                <p class="card-text">Feel free to choose topic you're interested in...!</p>
+                            </div>
+                            <button type="button" class="btn btn-warning" data-bs-toggle="modal" data-bs-target="#newtopic">Create Your own Discussion / Question</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!--Second card start-->
+            <div class="col-md-6">
+                <div class="ibox-content forum-container mt-5 posts-container">
+                    <div class="forum-title bg-GenSub">
+                        <div class="pull-right forum-desc">
+                            <samll>Total Comments: 320,800</samll>
+                        </div>
+                        <h3>General subjects</h3>
+                    </div>
+
+                    <div class="forum-item active bg-GenDis">
+                        <div class="row">
+                            <div><i class="fa fa-arrow-left bg-back" style="display:none;" onclick="back1()"></i></div>
+                            <div class="col-md-12">
+                                <div class="forum-icon">
+                                    <i class="fa fa-shield"></i>
+                                </div>
+
+                                <a href="#" class="forum-item-title" onclick="gd_click()">General Discussion</a>
+                                <p>Posted By : Mukesh Ambani</p>
+                                <div class="forum-sub-title">
+                                    Talk about sports, entertainment, music, movies, your favorite color, talk about enything.
+                                    <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+                                </div>
+
+                            </div>
+                            <div class="col-1 forum-info">
+                                <span class="views-number">
+                                    121
+                                </span>
+                                <div>
+                                    <small>Views</small>
+                                </div>
+                            </div>
+                            <div class="col-1 forum-info">
+                                <span class="views-number">
+                                    368
+                                </span>
+                                <div>
+                                    <small>Topics</small>
+                                </div>
+                            </div>
+                            <div class="col-1 forum-info">
+                                <span class="views-number">
+                                    140
+                                </span>
+                                <div>
+                                    <small>Comments</small>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!--General Disscussion start-->
+                    <div class="gendiss" style="display:none;">
+                        <div class="add-comment" style="display: flex;flex-direction:row;align-content: space-around;width: 100%;">
+
+                            <input class="comment-body" type="text" style="width: 75%;" placeholder="Add new Comment..." required>
+                            <input class="add-comment-btn" type="button" style="width: 25%;background-color: teal;color: white;" value="Add Comment">
+
+                        </div>
+                        <br>
+                        <label>Comments : </label>
+                        <div class="topic-box box1">
+                            <h6>
+                                Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s
+                            </h6>
+                            <p>Posted by: Rahul junjunwala</p>
+                            <div class="text-center bg-icon">
+                                <i class="fa fa-trash" onclick="bg_delete()"></i>
+                                <label onclick="bg_delete()">Delete</label>
+
+                                <i class="fa fa-reply" onclick="bg_rply()"></i>
+                                <label onclick="bg_rply()">Reply</label>
+
+
+                                <a href="https://www.facebook.com" target="_blank" class="fb">
+                                    <i class="fa fa-share-alt share" onclick="share()"></i>
+                                    <label onclick="share()" class="share">Share</label>
+                                </a>
+
+                            </div>
+                        </div>
+                        <!--reply box start-->
+                        <div class="rply" style="display:none;">
+                            <div class="mb-3">
+                                <label for="exampleFormControlTextarea1" class="form-label">Reply : </label>
+                                <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+                                <div class=" text-end">
+                                    <button type="button" class="btn btn-primary rply-btn" onclick="send()">Send</button>
+                                </div>
+
+                            </div>
+                        </div>
+                        <!--reply box end-->
+                        <div class="topic-box">
+                            <h6>
+                                Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s
+                            </h6>
+                            <p>Posted by: Rahul junjunwala</p>
+                            <div class="text-center bg-icon">
+                                <i class="fa fa-trash"></i>
+                                <label>Delete</label>
+
+                                <i class="fa fa-reply"></i>
+                                <label>Reply</label>
+
+                                <i class="fa fa-share-alt"></i>
+                                <label>Share</label>
+                            </div>
+                        </div>
+
+                        <div class="topic-box">
+                            <h6>
+                                Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s
+                            </h6>
+                            <p>Posted by: Rahul junjunwala</p>
+                            <div class="text-center bg-icon">
+                                <i class="fa fa-trash"></i>
+                                <label>Delete</label>
+
+                                <i class="fa fa-reply"></i>
+                                <label>Reply</label>
+
+                                <i class="fa fa-share-alt"></i>
+                                <label>Share</label>
+                            </div>
+                        </div>
+                        <div class="topic-box">
+                            <h6>
+                                Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s
+                            </h6>
+                            <p>Posted by: Rahul junjunwala</p>
+                            <div class="text-center bg-icon">
+                                <i class="fa fa-trash"></i>
+                                <label>Delete</label>
+
+                                <i class="fa fa-reply"></i>
+                                <label>Reply</label>
+
+                                <i class="fa fa-share-alt"></i>
+                                <label>Share</label>
+                            </div>
+                        </div>
+                        <div class="topic-box">
+                            <h6>
+                                Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s
+                            </h6>
+                            <p>Posted by: Rahul junjunwala</p>
+                            <div class="text-center bg-icon">
+                                <i class="fa fa-trash"></i>
+                                <label>Delete</label>
+
+                                <i class="fa fa-reply"></i>
+                                <label>Reply</label>
+
+                                <i class="fa fa-share-alt"></i>
+                                <label>Share</label>
+                            </div>
+                        </div>
+
+                    </div>
+                    <!--General Disscussion end-->
+
+                    <div class="forum-item bg-intro">
+                        <div class="row">
+                            <div><i class="fa fa-arrow-left bg-back" style="display:none;" onclick="back2()"></i></div>
+                            <div class="col-md-12">
+                                <div class="forum-icon">
+                                    <i class="fa fa-bolt"></i>
+                                </div>
+                                <a href="#" class="forum-item-title" onclick="intro_click()">Introductions</a>
+                                <p>Posted By : Jaiswant Singh</p>
+                                <div class="forum-sub-title">
+                                    New to the community? Please stop by, say hi and tell us a bit about yourself.
+                                    <p class="card-text"><small class="text-muted">Last updated 54 mins ago</small></p>
+                                </div>
+                            </div>
+                            <div class="col-1 forum-info">
+                                <span class="views-number">
+                                    890
+                                </span>
+                                <div>
+                                    <small>Views</small>
+                                </div>
+                            </div>
+                            <div class="col-1 forum-info">
+                                <span class="views-number">
+                                    120
+                                </span>
+                                <div>
+                                    <small>Topics</small>
+                                </div>
+                            </div>
+                            <div class="col-1 forum-info">
+                                <span class="views-number">
+                                    154
+                                </span>
+                                <div>
+                                    <small>Comments</small>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!--Introduction start-->
+                    <div class="intro" style="display:none;">
+                        <label>Comments : </label>
+                        <div class="topic-box box1">
+                            <h6>
+                                Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s
+                            </h6>
+                            <p>Posted by: Rahul junjunwala</p>
+                            <div class="text-center bg-icon">
+                                <i class="fa fa-trash" onclick="bg_delete()"></i>
+                                <label onclick="bg_delete()">Delete</label>
+
+                                <i class="fa fa-reply" onclick="rply()"></i>
+                                <label onclick="rply()">Reply</label>
+                                <i class="fa fa-share-alt"></i>
+                                <label>Share</label>
+                            </div>
+                        </div>
+                        <!--reply box start-->
+                        <div class="rply" style="display:none;">
+                            <div class="mb-3">
+                                <label for="exampleFormControlTextarea1" class="form-label">Reply : </label>
+                                <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+                                <div class=" text-end">
+                                    <button type="button" class="btn btn-primary rply-btn" onclick="send()">Send</button>
+                                </div>
+
+                            </div>
+                        </div>
+                        <!--reply box end-->
+                        <div class="topic-box">
+                            <h6>
+                                Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s
+                            </h6>
+                            <p>Posted by: Rahul junjunwala</p>
+                            <div class="text-center bg-icon">
+                                <i class="fa fa-trash"></i>
+                                <label>Delete</label>
+
+                                <i class="fa fa-reply"></i>
+                                <label>Reply</label>
+
+                                <i class="fa fa-share-alt"></i>
+                                <label>Share</label>
+                            </div>
+                        </div>
+
+                        <div class="topic-box">
+                            <h6>
+                                Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s
+                            </h6>
+                            <p>Posted by: Rahul junjunwala</p>
+                            <div class="text-center bg-icon">
+                                <i class="fa fa-trash"></i>
+                                <label>Delete</label>
+
+                                <i class="fa fa-reply"></i>
+                                <label>Reply</label>
+
+                                <i class="fa fa-share-alt"></i>
+                                <label>Share</label>
+                            </div>
+                        </div>
+                        <div class="topic-box">
+                            <h6>
+                                Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s
+                            </h6>
+                            <p>Posted by: Rahul junjunwala</p>
+                            <div class="text-center bg-icon">
+                                <i class="fa fa-trash"></i>
+                                <label>Delete</label>
+
+                                <i class="fa fa-reply"></i>
+                                <label>Reply</label>
+
+                                <i class="fa fa-share-alt"></i>
+                                <label>Share</label>
+                            </div>
+                        </div>
+                        <div class="topic-box">
+                            <h6>
+                                Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s
+                            </h6>
+                            <p>Posted by: Rahul junjunwala</p>
+                            <div class="text-center bg-icon">
+                                <i class="fa fa-trash"></i>
+                                <label>Delete</label>
+
+                                <i class="fa fa-reply"></i>
+                                <label>Reply</label>
+
+                                <i class="fa fa-share-alt"></i>
+                                <label>Share</label>
+                            </div>
+                        </div>
+
+                    </div>
+                    <!--Introduction end-->
+
+                    <div class="forum-item active bg-announc">
+                        <div class="row">
+                            <div><i class="fa fa-arrow-left bg-back" style="display:none;" onclick="back3()"></i></div>
+                            <div class="col-md-12">
+                                <div class="forum-icon">
+                                    <i class="fa fa-calendar"></i>
+                                </div>
+                                <a href="#" class="forum-item-title" onclick="announc_click()">Announcements</a>
+                                <p>Posted By : Sandip Koul</p>
+                                <div class="forum-sub-title">
+                                    This forum features announcements from the community staff. If there is a new post in this forum, please check it out.
+                                    <p class="card-text"><small class="text-muted">Last updated 3 Hours ago</small></p>
+                                </div>
+                            </div>
+                            <div class="col-1 forum-info">
+                                <span class="views-number">
+                                    680
+                                </span>
+                                <div>
+                                    <small>Views</small>
+                                </div>
+                            </div>
+                            <div class="col-1 forum-info">
+                                <span class="views-number">
+                                    124
+                                </span>
+                                <div>
+                                    <small>Topics</small>
+                                </div>
+                            </div>
+                            <div class="col-1 forum-info">
+                                <span class="views-number">
+                                    61
+                                </span>
+                                <div>
+                                    <small>Comments</small>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!--Announcment start-->
+                    <div class="announc" style="display:none;">
+                        <label>Comments : </label>
+                        <div class="topic-box box1">
+                            <h6>
+                                Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s
+                            </h6>
+                            <p>Posted by: Rahul junjunwala</p>
+                            <div class="text-center bg-icon">
+                                <i class="fa fa-trash" onclick="bg_delete()"></i>
+                                <label onclick="bg_delete()">Delete</label>
+
+                                <i class="fa fa-reply" onclick="rply()"></i>
+                                <label onclick="rply()">Reply</label>
+                                <i class="fa fa-share-alt"></i>
+                                <label>Share</label>
+                            </div>
+                        </div>
+                        <!--reply box start-->
+                        <div class="rply" style="display:none;">
+                            <div class="mb-3">
+                                <label for="exampleFormControlTextarea1" class="form-label">Reply : </label>
+                                <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+                                <div class=" text-end">
+                                    <button type="button" class="btn btn-primary rply-btn" onclick="send()">Send</button>
+                                </div>
+
+                            </div>
+                        </div>
+                        <!--reply box end-->
+                        <div class="topic-box">
+                            <h6>
+                                Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s
+                            </h6>
+                            <p>Posted by: Rahul junjunwala</p>
+                            <div class="text-center bg-icon">
+                                <i class="fa fa-trash"></i>
+                                <label>Delete</label>
+
+                                <i class="fa fa-reply"></i>
+                                <label>Reply</label>
+
+                                <i class="fa fa-share-alt"></i>
+                                <label>Share</label>
+                            </div>
+                        </div>
+
+                        <div class="topic-box">
+                            <h6>
+                                Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s
+                            </h6>
+                            <p>Posted by: Rahul junjunwala</p>
+                            <div class="text-center bg-icon">
+                                <i class="fa fa-trash"></i>
+                                <label>Delete</label>
+
+                                <i class="fa fa-reply"></i>
+                                <label>Reply</label>
+
+                                <i class="fa fa-share-alt"></i>
+                                <label>Share</label>
+                            </div>
+                        </div>
+                        <div class="topic-box">
+                            <h6>
+                                Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s
+                            </h6>
+                            <p>Posted by: Rahul junjunwala</p>
+                            <div class="text-center bg-icon">
+                                <i class="fa fa-trash"></i>
+                                <label>Delete</label>
+
+                                <i class="fa fa-reply"></i>
+                                <label>Reply</label>
+
+                                <i class="fa fa-share-alt"></i>
+                                <label>Share</label>
+                            </div>
+                        </div>
+                        <div class="topic-box">
+                            <h6>
+                                Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s
+                            </h6>
+                            <p>Posted by: Rahul junjunwala</p>
+                            <div class="text-center bg-icon">
+                                <i class="fa fa-trash"></i>
+                                <label>Delete</label>
+
+                                <i class="fa fa-reply"></i>
+                                <label>Reply</label>
+
+                                <i class="fa fa-share-alt"></i>
+                                <label>Share</label>
+                            </div>
+                        </div>
+
+                    </div>
+                    <!--Announcment end-->
+
+                    <div class="forum-item bg-StaffDiss">
+                        <div class="row">
+                            <div><i class="fa fa-arrow-left bg-back" style="display:none;" onclick="back4()"></i></div>
+                            <div class="col-md-12">
+                                <div class="forum-icon">
+                                    <i class="fa fa-star"></i>
+                                </div>
+                                <a href="#" class="forum-item-title" onclick="StafDiss_click()">Staff Discussion</a>
+                                <p>Posted By : Rahul roy</p>
+                                <div class="forum-sub-title">
+                                    This forum is for private, staff member only discussions, usually pertaining to the community itself.
+                                    <p class="card-text"><small class="text-muted">Last updated 1 day ago</small></p>
+                                </div>
+                            </div>
+                            <div class="col-1 forum-info">
+                                <span class="views-number">
+                                    145
+                                </span>
+                                <div>
+                                    <small>Views</small>
+                                </div>
+                            </div>
+                            <div class="col-1 forum-info">
+                                <span class="views-number">
+                                    652
+                                </span>
+                                <div>
+                                    <small>Topics</small>
+                                </div>
+                            </div>
+                            <div class="col-1 forum-info">
+                                <span class="views-number">
+                                    572
+                                </span>
+                                <div>
+                                    <small>Comments</small>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!--Staff Disscussion start-->
+                    <div class="StaffDiss" style="display:none;">
+                        <label>Comments : </label>
+                        <div class="topic-box box1">
+                            <h6>
+                                Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s
+                            </h6>
+                            <p>Posted by: Rahul junjunwala</p>
+                            <div class="text-center bg-icon">
+                                <i class="fa fa-trash" onclick="bg_delete()"></i>
+                                <label onclick="bg_delete()">Delete</label>
+
+                                <i class="fa fa-reply" onclick="rply()"></i>
+                                <label onclick="rply()">Reply</label>
+                                <i class="fa fa-share-alt"></i>
+                                <label>Share</label>
+                            </div>
+                        </div>
+                        <!--reply box start-->
+                        <div class="rply" style="display:none;">
+                            <div class="mb-3">
+                                <label for="exampleFormControlTextarea1" class="form-label">Reply : </label>
+                                <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+                                <div class=" text-end">
+                                    <button type="button" class="btn btn-primary rply-btn" onclick="send()">Send</button>
+                                </div>
+
+                            </div>
+                        </div>
+                        <!--reply box end-->
+                        <div class="topic-box">
+                            <h6>
+                                Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s
+                            </h6>
+                            <p>Posted by: Rahul junjunwala</p>
+                            <div class="text-center bg-icon">
+                                <i class="fa fa-trash"></i>
+                                <label>Delete</label>
+
+                                <i class="fa fa-reply"></i>
+                                <label>Reply</label>
+
+                                <i class="fa fa-share-alt"></i>
+                                <label>Share</label>
+                            </div>
+                        </div>
+
+                        <div class="topic-box">
+                            <h6>
+                                Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s
+                            </h6>
+                            <p>Posted by: Rahul junjunwala</p>
+                            <div class="text-center bg-icon">
+                                <i class="fa fa-trash"></i>
+                                <label>Delete</label>
+
+                                <i class="fa fa-reply"></i>
+                                <label>Reply</label>
+
+                                <i class="fa fa-share-alt"></i>
+                                <label>Share</label>
+                            </div>
+                        </div>
+                        <div class="topic-box">
+                            <h6>
+                                Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s
+                            </h6>
+                            <p>Posted by: Rahul junjunwala</p>
+                            <div class="text-center bg-icon">
+                                <i class="fa fa-trash"></i>
+                                <label>Delete</label>
+
+                                <i class="fa fa-reply"></i>
+                                <label>Reply</label>
+
+                                <i class="fa fa-share-alt"></i>
+                                <label>Share</label>
+                            </div>
+                        </div>
+                        <div class="topic-box">
+                            <h6>
+                                Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s
+                            </h6>
+                            <p>Posted by: Rahul junjunwala</p>
+                            <div class="text-center bg-icon">
+                                <i class="fa fa-trash"></i>
+                                <label>Delete</label>
+
+                                <i class="fa fa-reply"></i>
+                                <label>Reply</label>
+
+                                <i class="fa fa-share-alt"></i>
+                                <label>Share</label>
+                            </div>
+                        </div>
+                    </div>
+                    <!--Staff Disscussion end-->
+
+                    <div class="forum-title bg-OthrSub">
+                        <div class="pull-right forum-desc">
+                            <samll>Total Comments: 17,800,600</samll>
+                        </div>
+                        <h3>Other subjects</h3>
+
+                        <div class="forum-item bg-oth-sub1">
+                            <div class="row">
+                                <div><i class="fa fa-arrow-left bg-back" style="display:none;" onclick="back5()"></i></div>
+                                <div class="col-md-12">
+                                    <div class="forum-icon">
+                                        <i class="fa fa-clock-o"></i>
+                                    </div>
+                                    <a href="#" class="forum-item-title" onclick="oth_sub1()">Lorem Ipsum is simply dummy text. </a>
+                                    <p>Posted By : Joe Shon</p>
+                                    <div class="forum-sub-title">
+                                        Various versions have evolved over the years, sometimes by accident, sometimes on purpose passage of Lorem Ipsum (injected humour and the like).
+                                        <p class="card-text"><small class="text-muted">Last updated 28 mins ago</small></p>
+                                    </div>
+                                </div>
+                                <div class="col-1 forum-info">
+                                    <span class="views-number">
+                                        151
+                                    </span>
+                                    <div>
+                                        <small>Views</small>
+                                    </div>
+                                </div>
+                                <div class="col-1 forum-info">
+                                    <span class="views-number">
+                                        238
+                                    </span>
+                                    <div>
+                                        <small>Topics</small>
+                                    </div>
+                                </div>
+                                <div class="col-1 forum-info">
+                                    <span class="views-number">
+                                        180
+                                    </span>
+                                    <div>
+                                        <small>Comments</small>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!--Staff Disscussion start-->
+                        <div class="oth-sub1" style="display:none;">
+                            <label>Comments : </label>
+                            <div class="topic-box box1">
+                                <h6>
+                                    Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s
+                                </h6>
+                                <p>Posted by: Rahul junjunwala</p>
+                                <div class="text-center bg-icon">
+                                    <i class="fa fa-trash" onclick="bg_delete()"></i>
+                                    <label onclick="bg_delete()">Delete</label>
+
+                                    <i class="fa fa-reply" onclick="rply()"></i>
+                                    <label onclick="rply()">Reply</label>
+                                    <i class="fa fa-share-alt"></i>
+                                    <label>Share</label>
+                                </div>
+                            </div>
+                            <!--reply box start-->
+                            <div class="rply" style="display:none;">
+                                <div class="mb-3">
+                                    <label for="exampleFormControlTextarea1" class="form-label">Reply : </label>
+                                    <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+                                    <div class=" text-end">
+                                        <button type="button" class="btn btn-primary rply-btn" onclick="send()">Send</button>
+                                    </div>
+
+                                </div>
+                            </div>
+                            <!--reply box end-->
+                            <div class="topic-box">
+                                <h6>
+                                    Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s
+                                </h6>
+                                <p>Posted by: Rahul junjunwala</p>
+                                <div class="text-center bg-icon">
+                                    <i class="fa fa-trash"></i>
+                                    <label>Delete</label>
+
+                                    <i class="fa fa-reply"></i>
+                                    <label>Reply</label>
+
+                                    <i class="fa fa-share-alt"></i>
+                                    <label>Share</label>
+                                </div>
+                            </div>
+
+                            <div class="topic-box">
+                                <h6>
+                                    Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s
+                                </h6>
+                                <p>Posted by: Rahul junjunwala</p>
+                                <div class="text-center bg-icon">
+                                    <i class="fa fa-trash"></i>
+                                    <label>Delete</label>
+
+                                    <i class="fa fa-reply"></i>
+                                    <label>Reply</label>
+
+                                    <i class="fa fa-share-alt"></i>
+                                    <label>Share</label>
+                                </div>
+                            </div>
+                            <div class="topic-box">
+                                <h6>
+                                    Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s
+                                </h6>
+                                <p>Posted by: Rahul junjunwala</p>
+                                <div class="text-center bg-icon">
+                                    <i class="fa fa-trash"></i>
+                                    <label>Delete</label>
+
+                                    <i class="fa fa-reply"></i>
+                                    <label>Reply</label>
+
+                                    <i class="fa fa-share-alt"></i>
+                                    <label>Share</label>
+                                </div>
+                            </div>
+                            <div class="topic-box">
+                                <h6>
+                                    Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s
+                                </h6>
+                                <p>Posted by: Rahul junjunwala</p>
+                                <div class="text-center bg-icon">
+                                    <i class="fa fa-trash"></i>
+                                    <label>Delete</label>
+
+                                    <i class="fa fa-reply"></i>
+                                    <label>Reply</label>
+
+                                    <i class="fa fa-share-alt"></i>
+                                    <label>Share</label>
+                                </div>
+                            </div>
+                        </div>
+                        <!--Staff Disscussion end-->
+
+                        <div class="forum-item bg-oth-sub2">
+                            <div class="row">
+                                <div><i class="fa fa-arrow-left bg-back" style="display:none;" onclick="back6()"></i></div>
+                                <div class="col-md-12">
+                                    <div class="forum-icon">
+                                        <i class="fa fa-bomb"></i>
+                                    </div>
+                                    <a href="#" class="forum-item-title" onclick="oth_sub2()">There are many variations of passages</a>
+                                    <p>Posted By : Wilams kour</p>
+                                    <div class="forum-sub-title">
+                                        If you are going to use a passage of Lorem Ipsum, you need to be sure there isn't anything embarrassing hidden in the middle of text. All the Lorem Ipsum generators on the.
+                                        <p class="card-text"><small class="text-muted">Last updated 10 Hours ago</small></p>
+                                    </div>
+                                </div>
+                                <div class="col-1 forum-info">
+                                    <span class="views-number">
+                                        176
+                                    </span>
+                                    <div>
+                                        <small>Views</small>
+                                    </div>
+                                </div>
+                                <div class="col-1 forum-info">
+                                    <span class="views-number">
+                                        321
+                                    </span>
+                                    <div>
+                                        <small>Topics</small>
+                                    </div>
+                                </div>
+                                <div class="col-1 forum-info">
+                                    <span class="views-number">
+                                        42
+                                    </span>
+                                    <div>
+                                        <small>Comments</small>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!--Staff Disscussion start-->
+                        <div class="oth-sub2" style="display:none;">
+                            <label>Comments : </label>
+                            <div class="topic-box box1">
+                                <h6>
+                                    Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s
+                                </h6>
+                                <p>Posted by: Rahul junjunwala</p>
+                                <div class="text-center bg-icon">
+                                    <i class="fa fa-trash" onclick="bg_delete()"></i>
+                                    <label onclick="bg_delete()">Delete</label>
+
+                                    <i class="fa fa-reply" onclick="rply()"></i>
+                                    <label onclick="rply()">Reply</label>
+                                    <i class="fa fa-share-alt"></i>
+                                    <label>Share</label>
+                                </div>
+                            </div>
+                            <!--reply box start-->
+                            <div class="rply" style="display:none;">
+                                <div class="mb-3">
+                                    <label for="exampleFormControlTextarea1" class="form-label">Reply : </label>
+                                    <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+                                    <div class=" text-end">
+                                        <button type="button" class="btn btn-primary rply-btn" onclick="send()">Send</button>
+                                    </div>
+
+                                </div>
+                            </div>
+                            <!--reply box end-->
+                            <div class="topic-box">
+                                <h6>
+                                    Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s
+                                </h6>
+                                <p>Posted by: Rahul junjunwala</p>
+                                <div class="text-center bg-icon">
+                                    <i class="fa fa-trash"></i>
+                                    <label>Delete</label>
+
+                                    <i class="fa fa-reply"></i>
+                                    <label>Reply</label>
+
+                                    <i class="fa fa-share-alt"></i>
+                                    <label>Share</label>
+                                </div>
+                            </div>
+
+                            <div class="topic-box">
+                                <h6>
+                                    Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s
+                                </h6>
+                                <p>Posted by: Rahul junjunwala</p>
+                                <div class="text-center bg-icon">
+                                    <i class="fa fa-trash"></i>
+                                    <label>Delete</label>
+
+                                    <i class="fa fa-reply"></i>
+                                    <label>Reply</label>
+
+                                    <i class="fa fa-share-alt"></i>
+                                    <label>Share</label>
+                                </div>
+                            </div>
+                            <div class="topic-box">
+                                <h6>
+                                    Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s
+                                </h6>
+                                <p>Posted by: Rahul junjunwala</p>
+                                <div class="text-center bg-icon">
+                                    <i class="fa fa-trash"></i>
+                                    <label>Delete</label>
+
+                                    <i class="fa fa-reply"></i>
+                                    <label>Reply</label>
+
+                                    <i class="fa fa-share-alt"></i>
+                                    <label>Share</label>
+                                </div>
+                            </div>
+                            <div class="topic-box">
+                                <h6>
+                                    Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s
+                                </h6>
+                                <p>Posted by: Rahul junjunwala</p>
+                                <div class="text-center bg-icon">
+                                    <i class="fa fa-trash"></i>
+                                    <label>Delete</label>
+
+                                    <i class="fa fa-reply"></i>
+                                    <label>Reply</label>
+
+                                    <i class="fa fa-share-alt"></i>
+                                    <label>Share</label>
+                                </div>
+                            </div>
+                        </div>
+                        <!--Staff Disscussion end-->
+
+                        <div class="forum-item bg-oth-sub3">
+                            <div class="row">
+                                <div><i class="fa fa-arrow-left bg-back" style="display:none;" onclick="back7()"></i></div>
+                                <div class="col-md-12">
+                                    <div class="forum-icon">
+                                        <i class="fa fa-bookmark"></i>
+                                    </div>
+                                    <a href="#" class="forum-item-title" onclick="oth_sub3()">The standard chunk of Lorem Ipsum</a>
+                                    <p>Posted By : Tom Hary</p>
+                                    <div class="forum-sub-title">
+                                        Ipsum generators on the Internet tend to repeat predefined chunks as necessary, making this the first true generator on the Internet.
+                                        <p class="card-text"><small class="text-muted">Last updated 1 Month ago</small></p>
+                                    </div>
+                                </div>
+                                <div class="col-1 forum-info">
+                                    <span class="views-number">
+                                        765
+                                    </span>
+                                    <div>
+                                        <small>Views</small>
+                                    </div>
+                                </div>
+                                <div class="col-1 forum-info">
+                                    <span class="views-number">
+                                        90
+                                    </span>
+                                    <div>
+                                        <small>Topics</small>
+                                    </div>
+                                </div>
+                                <div class="col-1 forum-info">
+                                    <span class="views-number">
+                                        11
+                                    </span>
+                                    <div>
+                                        <small>Comments</small>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!--Staff Disscussion start-->
+                        <div class="oth-sub3" style="display:none;">
+                            <label>Comments : </label>
+                            <div class="topic-box box1">
+                                <h6>
+                                    Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s
+                                </h6>
+                                <p>Posted by: Rahul junjunwala</p>
+                                <div class="text-center bg-icon">
+                                    <i class="fa fa-trash" onclick="bg_delete()"></i>
+                                    <label onclick="bg_delete()">Delete</label>
+
+                                    <i class="fa fa-reply" onclick="rply()"></i>
+                                    <label onclick="rply()">Reply</label>
+                                    <i class="fa fa-share-alt"></i>
+                                    <label>Share</label>
+                                </div>
+                            </div>
+                            <!--reply box start-->
+                            <div class="rply" style="display:none;">
+                                <div class="mb-3">
+                                    <label for="exampleFormControlTextarea1" class="form-label">Reply : </label>
+                                    <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+                                    <div class=" text-end">
+                                        <button type="button" class="btn btn-primary rply-btn" onclick="send()">Send</button>
+                                    </div>
+
+                                </div>
+                            </div>
+                            <!--reply box end-->
+                            <div class="topic-box">
+                                <h6>
+                                    Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s
+                                </h6>
+                                <p>Posted by: Rahul junjunwala</p>
+                                <div class="text-center bg-icon">
+                                    <i class="fa fa-trash"></i>
+                                    <label>Delete</label>
+
+                                    <i class="fa fa-reply"></i>
+                                    <label>Reply</label>
+
+                                    <i class="fa fa-share-alt"></i>
+                                    <label>Share</label>
+                                </div>
+                            </div>
+
+                            <div class="topic-box">
+                                <h6>
+                                    Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s
+                                </h6>
+                                <p>Posted by: Rahul junjunwala</p>
+                                <div class="text-center bg-icon">
+                                    <i class="fa fa-trash"></i>
+                                    <label>Delete</label>
+
+                                    <i class="fa fa-reply"></i>
+                                    <label>Reply</label>
+
+                                    <i class="fa fa-share-alt"></i>
+                                    <label>Share</label>
+                                </div>
+                            </div>
+                            <div class="topic-box">
+                                <h6>
+                                    Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s
+                                </h6>
+                                <p>Posted by: Rahul junjunwala</p>
+                                <div class="text-center bg-icon">
+                                    <i class="fa fa-trash"></i>
+                                    <label>Delete</label>
+
+                                    <i class="fa fa-reply"></i>
+                                    <label>Reply</label>
+
+                                    <i class="fa fa-share-alt"></i>
+                                    <label>Share</label>
+                                </div>
+                            </div>
+                            <div class="topic-box">
+                                <h6>
+                                    Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s
+                                </h6>
+                                <p>Posted by: Rahul junjunwala</p>
+                                <div class="text-center bg-icon">
+                                    <i class="fa fa-trash"></i>
+                                    <label>Delete</label>
+
+                                    <i class="fa fa-reply"></i>
+                                    <label>Reply</label>
+
+                                    <i class="fa fa-share-alt"></i>
+                                    <label>Share</label>
+                                </div>
+                            </div>
+                        </div>
+                        <!--Staff Disscussion end-->
+
+                        <div class="forum-item bg-oth-sub4">
+                            <div class="row">
+                                <div><i class="fa fa-arrow-left bg-back" style="display:none;" onclick="back8()"></i></div>
+                                <div class="col-md-12">
+                                    <div class="forum-icon">
+                                        <i class="fa fa-ambulance"></i>
+                                    </div>
+                                    <a href="#" class="forum-item-title" onclick="oth_sub4()">Lorem Ipsum, you need to be sure there</a>
+                                    <p>Posted By : John Smith</p>
+                                    <div class="forum-sub-title">
+                                        Internet tend to repeat predefined chunks as necessary, making this the
+                                        <p class="card-text"><small class="text-muted">Last updated 16 mins ago</small></p>
+                                    </div>
+                                </div>
+                                <div class="col-1 forum-info">
+                                    <span class="views-number">
+                                        255
+                                    </span>
+                                    <div>
+                                        <small>Views</small>
+                                    </div>
+                                </div>
+                                <div class="col-1 forum-info">
+                                    <span class="views-number">
+                                        122
+                                    </span>
+                                    <div>
+                                        <small>Topics</small>
+                                    </div>
+                                </div>
+                                <div class="col-1 forum-info">
+                                    <span class="views-number">
+                                        92
+                                    </span>
+                                    <div>
+                                        <small>Comments</small>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!--Staff Disscussion start-->
+                        <div class="oth-sub4" style="display:none;">
+                            <label>Comments : </label>
+                            <div class="topic-box box1">
+                                <h6>
+                                    Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s
+                                </h6>
+                                <p>Posted by: Rahul junjunwala</p>
+                                <div class="text-center bg-icon">
+                                    <i class="fa fa-trash" onclick="bg_delete()"></i>
+                                    <label onclick="bg_delete()">Delete</label>
+
+                                    <i class="fa fa-reply" onclick="rply()"></i>
+                                    <label onclick="rply()">Reply</label>
+                                    <i class="fa fa-share-alt"></i>
+                                    <label>Share</label>
+                                </div>
+                            </div>
+                            <!--reply box start-->
+                            <div class="rply" style="display:none;">
+                                <div class="mb-3">
+                                    <label for="exampleFormControlTextarea1" class="form-label">Reply : </label>
+                                    <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+                                    <div class=" text-end">
+                                        <button type="button" class="btn btn-primary rply-btn" onclick="send()">Send</button>
+                                    </div>
+
+                                </div>
+                            </div>
+                            <!--reply box end-->
+                            <div class="topic-box">
+                                <h6>
+                                    Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s
+                                </h6>
+                                <p>Posted by: Rahul junjunwala</p>
+                                <div class="text-center bg-icon">
+                                    <i class="fa fa-trash"></i>
+                                    <label>Delete</label>
+
+                                    <i class="fa fa-reply"></i>
+                                    <label>Reply</label>
+
+                                    <i class="fa fa-share-alt"></i>
+                                    <label>Share</label>
+                                </div>
+                            </div>
+
+                            <div class="topic-box">
+                                <h6>
+                                    Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s
+                                </h6>
+                                <p>Posted by: Rahul junjunwala</p>
+                                <div class="text-center bg-icon">
+                                    <i class="fa fa-trash"></i>
+                                    <label>Delete</label>
+
+                                    <i class="fa fa-reply"></i>
+                                    <label>Reply</label>
+
+                                    <i class="fa fa-share-alt"></i>
+                                    <label>Share</label>
+                                </div>
+                            </div>
+                            <div class="topic-box">
+                                <h6>
+                                    Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s
+                                </h6>
+                                <p>Posted by: Rahul junjunwala</p>
+                                <div class="text-center bg-icon">
+                                    <i class="fa fa-trash"></i>
+                                    <label>Delete</label>
+
+                                    <i class="fa fa-reply"></i>
+                                    <label>Reply</label>
+
+                                    <i class="fa fa-share-alt"></i>
+                                    <label>Share</label>
+                                </div>
+                            </div>
+                            <div class="topic-box">
+                                <h6>
+                                    Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s
+                                </h6>
+                                <p>Posted by: Rahul junjunwala</p>
+                                <div class="text-center bg-icon">
+                                    <i class="fa fa-trash"></i>
+                                    <label>Delete</label>
+
+                                    <i class="fa fa-reply"></i>
+                                    <label>Reply</label>
+
+                                    <i class="fa fa-share-alt"></i>
+                                    <label>Share</label>
+                                </div>
+                            </div>
+                        </div>
+                        <!--Staff Disscussion end-->
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!--New topic modal start-->
+    <div class="modal fade" id="newtopic" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title font" id="exampleModalLabel">New Discussion / Question</h5>
+                    <button type="button" class="btn-close new-post-question-close-btn" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <label for="display" class="new-post-output"></label>
+                    <form>
+                        <div class="mb-3 mt-4 row text-center">
+                            <div class="col bg-disc" onclick="diss_click()">
+                                <i class="fa fa-forumbee"></i>
+                                <h3 class="font">Discussion</h3>
+                                <p>Share ideas and start conversations</p>
+                            </div>
+                            <div class="col bg-disc" onclick="quest_click()">
+                                <i class="fa fa-question-circle"></i>
+                                <h3 class="font">Question</h3>
+                                <p>Raise issues that need answers</p>
+                            </div>
+                        </div>
+
+                        <!--Discussion  start-->
+                        <div class="diss">
+                            <!--select part start-->
+                            <div class="row">
+                                <div class="col-1"><i class="fa fa-pencil" style="font-size: 32px; margin: 14px 0;"></i></div>
+                                <div class="col">
+                                    <div class="form-floating mb-3">
+                                        <input type="text" class="form-control new-post-title" id="floatingInput" placeholder="name@example.com">
+                                        <label for="floatingInput">Enter your Discussion topic</label>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!--Post title start-->
+                            <div class="row">
+                                <div class="col-1"><i class="fa fa-file-text" style="font-size: 32px; margin: 14px 0;"></i></div>
+                                <div class="col">
+                                    <div class="form-floating">
+                                        <textarea class="form-control new-post-body" placeholder="Leave a comment here" id="floatingTextarea2" style="height: 100px"></textarea>
+                                        <label for="floatingTextarea2">Topic Description Here..</label>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!--Post title end-->
+                            <div class="text-center">
+                                <a href="#">
+                                    <button type="submit" class="btn btn-primary mt-3 add-post-btn" onclick="addNewPost(event, 0)">Post Topic</button>
+                                </a>
+                            </div>
+                        </div>
+                        <!--Discussion end-->
+                        <!--Question  start-->
+                        <div class="quest" style="display:none;">
+                            <!--select part start-->
+                            <div class="form bg-select">
+                                <label>Question Category : </label>
+                                <select class="form-select new-question-title" id="floatingSelect" aria-label="Floating label select example">
+                                    <option value="Question: Technical">Technical</option>
+                                    <option value="Question: Non-Technical">Non-Technical</option>
+                                </select>
+                            </div>
+                            <!--select part end-->
+                            <!--Post title start-->
+                            <div class="form-floating">
+                                <textarea class="form-control new-question-body" placeholder="Leave a comment here" id="floatingTextarea2" style="height: 100px"></textarea>
+                                <label for="floatingTextarea2">Type your Question Here..</label>
+                            </div>
+                            <!--Post title end-->
+                            <div class="text-center">
+                                <a href="#">
+                                    <button type="submit" class="btn btn-primary mt-3" onclick="addNewPost(event, 1)">Post Question</button>
+                                </a>
+                            </div>
+                        </div>
+                        <!--Question end-->
+
+
+
+
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--New topic modal end-->
+
+    <script src="./assets/js/script.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/limonte-sweetalert2/8.11.8/sweetalert2.all.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/typed.js/2.0.0/typed.min.js" integrity="sha512-zKaK6G2LZC5YZTX0vKmD7xOwd1zrEEMal4zlTf5Ved/A1RrnW+qt8pWDfo7oz+xeChECS/P9dv6EDwwPwelFfQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+    <!--Search bar-->
+    <script>
+        const basicAutocomplete = document.querySelector('#search-autocomplete');
+        const data = ['One', 'Two', 'Three', 'Four', 'Five'];
+        const dataFilter = (value) => {
+            return data.filter((item) => {
+                return item.toLowerCase().startsWith(value.toLowerCase());
+            });
+        };
+
+        new mdb.Autocomplete(basicAutocomplete, {
+            filter: dataFilter
+        });
+    </script>
+
+    <!--script for  toggle-->
+    <script>
+        function gd_click() {
+            $(".gendiss,.bg-back").show(700);
+            $(".bg-intro,.bg-announc,.bg-StaffDiss,.bg-OthrSub").hide(700);
+        };
+        function back1() {
+            $(".bg-back,.gendiss").hide(700);
+            $(".bg-intro,.bg-announc,.bg-StaffDiss,.bg-OthrSub").show(700);
+        };
+    </script>
+    <script>
+        function intro_click() {
+            $(".intro,.bg-back").show(700);
+            $(".bg-GenDis,.bg-announc,.bg-StaffDiss,.bg-OthrSub").hide(700);
+        };
+        function back2() {
+            $(".intro,.gendiss,.bg-back").hide(700);
+            $(".bg-intro,.bg-GenDis,.bg-announc,.bg-StaffDiss,.bg-OthrSub").show(700);
+        };
+    </script>
+    <script>
+        function announc_click() {
+            $(".announc,.bg-back").show(700);
+            $(".bg-intro,.bg-GenDis,.bg-StaffDiss,.bg-OthrSub").hide(700);
+        };
+        function back3() {
+            $(".intro,.gendiss,.announc,.bg-back").hide(700);
+            $(".bg-intro,.bg-GenDis,.bg-StaffDiss,.bg-announc,.bg-OthrSub").show(700);
+        };
+    </script>
+    <script>
+        function StafDiss_click() {
+            $(".StaffDiss,.bg-back").show(700);
+            $(".bg-intro,.bg-GenDis,.bg-intro,.bg-announc,.bg-OthrSub").hide(700);
+        };
+        function back4() {
+            $(".StaffDiss,.bg-back").hide(700);
+            $(".bg-intro,.bg-GenDis,.bg-intro,.bg-announc,.bg-OthrSub").show(700);
+        };
+    </script>
+    <script>
+        function oth_sub1() {
+            $(".oth-sub1,.bg-back").show(700);
+            $(".bg-intro,.bg-GenDis,.bg-StaffDiss,.bg-announc,.bg-oth-sub2,.bg-oth-sub3,.bg-oth-sub4,.bg-GenSub").hide(700);
+        };
+        function back5() {
+            $(".oth-sub1,.bg-back").hide(700);
+            $(".bg-intro,.bg-GenDis,.bg-StaffDiss,.bg-announc,.bg-oth-sub2,.bg-oth-sub3,.bg-oth-sub4,.bg-GenSub").show(700);
+        };
+    </script>
+    <script>
+        function oth_sub2() {
+            $(".oth-sub2,.bg-back").show(700);
+            $(".bg-intro,.bg-GenDis,.bg-StaffDiss,.bg-announc,.bg-oth-sub1,.bg-oth-sub3,.bg-oth-sub4,.bg-GenSub").hide(700);
+        };
+        function back6() {
+            $(".oth-sub2,.bg-back").hide(700);
+            $(".bg-intro,.bg-GenDis,.bg-StaffDiss,.bg-announc,.bg-oth-sub1,.bg-oth-sub3,.bg-oth-sub4,.bg-GenSub").show(700);
+        };
+    </script>
+    <script>
+        function oth_sub3() {
+            $(".oth-sub3,.bg-back").show(700);
+            $(".bg-intro,.bg-GenDis,.bg-StaffDiss,.bg-announc,.bg-oth-sub2,.bg-oth-sub1,.bg-oth-sub4,.bg-GenSub").hide(700);
+        };
+        function back7() {
+            $(".oth-sub3,.bg-back").hide(700);
+            $(".bg-intro,.bg-GenDis,.bg-StaffDiss,.bg-announc,.bg-oth-sub2,.bg-oth-sub1,.bg-oth-sub4,.bg-GenSub").show(700);
+        };
+    </script>
+    <script>
+        function oth_sub4() {
+            $(".oth-sub4,.bg-back").show(700);
+            $(".bg-intro,.bg-GenDis,.bg-StaffDiss,.bg-announc,.bg-oth-sub2,.bg-oth-sub3,.bg-oth-sub1,.bg-GenSub").hide(700);
+        };
+        function back8() {
+            $(".oth-sub4,.bg-back").hide(700);
+            $(".bg-intro,.bg-GenDis,.bg-StaffDiss,.bg-announc,.bg-oth-sub2,.bg-oth-sub3,.bg-oth-sub1,.bg-GenSub").show(700);
+        };
+    </script>
+    <script src="./assets/js/index.js" type="application/javascript"></script>
+
+    <!--New topic modal-->
+    <script>
+        function quest_click() {
+            $(".quest").show(700);
+            $(".diss").hide(700);
+        };
+    </script>
+    <script>
+        function diss_click() {
+            $(".diss").show(700);
+            $(".quest").hide(700);
+        };
+    </script>
+
+    <!--Delete Jquery-->
+    <script>
+        function bg_delete() {
+            //$(".box1").hide('slow');
+            $('.box1,.rply').fadeOut(500, function () { $(this).remove(); });
+        };
+    </script>
+
+    <!--Reply Jquery-->
+    <script>
+        function bg_rply() {
+            $(".rply").show(700);
+            //$(".quest").hide(700);
+        };
+    </script>
+
+    <!--Share Jquery-->
+    <!--<script>
+        $(document).ready(function () {
+            $(document).on("click", '.share', function () {
+                if (/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)) {
+                    var sText = "Text to share";
+                    var sUrl = "Link to share";
+                    var sMsg = encodeURIComponent(sText) + " - " + encodeURIComponent(sUrl);
+                    var whatsapp_url = "whatsapp://send?text=" + sMsg;
+                    window.location.href = whatsapp_url;
+                }
+                else {
+                    alert("Whatsapp client not available.");
+                }
+            });
+        });
+    </script>-->
+    <!--Sweet alert Jquery-->
+    <script>
+        function send() {
+            Swal.fire({
+                position: 'top-end',
+                icon: 'success',
+                title: 'Your reply send successfully !',
+                showConfirmButton: false,
+                timer: 1500
+            })
+        }
+    </script>
+
+    <script>
+        function signup() {
+            Swal.fire({
+                position: 'top-end',
+                icon: 'success',
+                title: 'Signup successfully !',
+                showConfirmButton: false,
+                timer: 1500
+            })
+        }
+    </script>
+
+</body>
+</html>
